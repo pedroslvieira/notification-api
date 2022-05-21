@@ -39,15 +39,15 @@ Response Body Example
 [
     {
         "id": 1,
-        "date": null,
-        "title": "Testing Update",
-        "description": "Testing"
+        "date": "Sat, 21 May 2022 11:23:03 +0200",
+        "title": "Notification 01",
+        "description": "Notification 01 description"
     },
     {
         "id": 2,
-        "date": null,
-        "title": "New Title Update All",
-        "description": "Testing creation"
+        "date": "Sat, 21 May 2022 11:23:03 +0200",
+        "title": "Notification 02",
+        "description": "Notification 02 description"
     },
     …
 ]
@@ -64,18 +64,18 @@ Response Body Example
 ```json
 {
   "id": 1,
-  "date": null,
-  "title": "Testing Update",
-  "description": "Testing",
+  "date": "Sat, 21 May 2022 11:23:03 +0200",
+  "title": "Notification 01",
+  "description": "Notification 01 description",
   "user_notifications": [
     {
       "id": 1,
       "seen": false,
       "user_id": 1,
-      "email": "pedroslvieira@gmail.com"
+      "email": "john.doe@gmail.com"
     },
     {
-      "id": 3,
+      "id": 2,
       "seen": true,
       "user_id": 2,
       "email": "pedro@gmail.com"
