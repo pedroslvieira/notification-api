@@ -83,6 +83,7 @@ Response Body Example
     …
   ]
 }
+```
 
 <h4 align="left">As Admin, I can create a notification</h4>
 Admins are able to create new notifications with date, title and description. The attributes should be passed in the request body.
@@ -123,7 +124,7 @@ Request Body Example
 ```json
 {
     "notification": {
-         "title": "New Title”
+         "title": "New Title"
      }
 }
 ```
@@ -135,5 +136,40 @@ Response Body Example
     "title": "New Title",
     "description": "Using the API to create a new notification",
     "users_notified": []
+}
+```
+
+<h4 align="left">As Admin, I can assign a notification to one or multiple clients</h4>
+After a notification is created, Admins can assign them to one multiple Clients passing an array of users ids to the request body. The request creates instance(s) of UserNotification.
+
+<br/>[POST] 
+<br/>Endpoint:  /v1/notifications/:notification_id//user_notifications
+<br/>Host: http://localhost:3000/api
+
+Request Body Example
+```json
+{
+    "user_notification": {
+        "user_ids": [
+            2
+        ]
+    }
+}
+```
+Response Body Example
+```json
+{
+    "id": 2,
+    "date": "2022-05-21T00:00:00.000Z",
+    "title": "New Title",
+    "description": "Using the API to create a new notification",
+    "user_notifications": [
+        {
+            "id": 28,
+            "seen": false,
+            "user_id": 2,
+            "email": "pedro@gmail.com"
+        }
+    ]
 }
 ```
