@@ -80,6 +80,60 @@ Response Body Example
       "user_id": 2,
       "email": "pedro@gmail.com"
     },
-    (…)
+    …
   ]
 }
+
+<h4 align="left">As Admin, I can create a notification</h4>
+Admins are able to create new notifications with date, title and description. The attributes should be passed in the request body.
+
+<br/>[POST] 
+<br/>Endpoint:  /v1/notifications
+<br/>Host: http://localhost:3000/api
+
+Request Body Example
+```json
+{
+    "notification": {
+        "date": "Sat, 21 May 2022 11:23:03 +0200",
+        "title": "Creating New Notification",
+        "description": "Using the API to create a new notification"
+    }
+}
+```
+Response Body Example
+```json
+{
+    "id": 2,
+    "date": "2022-05-21T09:23:03.000Z",
+    "title": "Creating New Notification",
+    "description": "Using the API to create a new notification",
+    "users_notified": []
+}
+```
+
+<h4 align="left">As Admin, I can update a notification</h4>
+Admins can update one or more fields of existing notifications. The attributes should be passed in the request body.
+
+<br/>[PATCH] 
+<br/>Endpoint:  /v1/notifications/:id
+<br/>Host: http://localhost:3000/api
+
+Request Body Example
+```json
+{
+    "notification": {
+         "title": "New Title”
+     }
+}
+```
+Response Body Example
+```json
+{
+    "id": 2,
+    "date": "2022-05-21T09:23:03.000Z",
+    "title": "New Title",
+    "description": "Using the API to create a new notification",
+    "users_notified": []
+}
+```
