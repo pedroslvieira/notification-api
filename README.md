@@ -49,8 +49,7 @@ Response Body Example
         "date": "Sat, 21 May 2022 11:23:03 +0200",
         "title": "Notification 02",
         "description": "Notification 02 description"
-    },
-    …
+    }
 ]
 ```
 
