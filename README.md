@@ -1,21 +1,21 @@
 <h2 align="left">Notification Center API</h2>
 
 <h3 align="left">Overview</h3>
-The notification center allows Admins to set up notifications and clients to get the latest notifications relevant for them. The features covered by the API:
+The Notification Center API allows Admins to set up notifications and clients to get the latest notifications relevant for them. The features covered by the API:
 
 <br/>As an Admin, I can:
-- See all notifications
-- See the details of a specific notification 
-- Create a notification 
-- Assign a notification to one or multiple clients
-- Delete a notification
-- Delete a user_notification
+<br/> :: See all notifications
+<br/> :: See the details of a specific notification 
+<br/> :: Create a notification 
+<br/> :: Assign a notification to one or multiple clients
+<br/> :: Delete a notification
+<br/> :: Delete a user_notification
 
 As a Client, I can:
-- View my notifications
+<br/> :: View my notifications
 
 <h3 align="left">Structure</h3>
-The API structured with three models: User, Notification and UserNotification. Users can have many notifications and notifications can have many users. UserNotification creates the association between one user and one notification, it also contains the field “seen” that indicates if the user has seen the notification.
+The API is structured with three models: User, Notification and UserNotification. Users can have many notifications and notifications can have many users. UserNotification creates the association between a user and a notification, it also contains the field “seen” that indicates if the user has seen the notification.
 
 <h3 align="left">Authentication</h3>
 The Notification Center API uses token authentication to manage requests permissions. All requests require user authentication. The User Token will be automatically generated when a new user is created. The user credentials should be passed in the HTTP headers as the example:
@@ -27,7 +27,8 @@ The Notification Center API uses token authentication to manage requests permiss
 
 <h3 align="left">Features</h3>
 
-<h4 align="left">As Admin, I can see all notifications</h4>
+
+<h4 align="left">:: As Admin, I can see all notifications</h4>
 Admins have access to a list of all notifications. The response returns an array of notifications.
 
 <br/>[GET] 
@@ -53,7 +54,7 @@ Response Body Example
 ]
 ```
 
-<h4 align="left">As Admin, I can see the details of a notification </h4>
+<h4 align="left">::As Admin, I can see the details of a notification </h4>
 Admins can see in detail a notification. It presents a list of all user_notifications associated to it and details about the users notified (user id and email).
 
 <br/>[GET] 
@@ -84,7 +85,7 @@ Response Body Example
 }
 ```
 
-<h4 align="left">As Admin, I can create a notification</h4>
+<h4 align="left">::As Admin, I can create a notification</h4>
 Admins are able to create new notifications with date, title and description. The attributes should be passed in the request body.
 
 <br/>[POST] 
@@ -112,7 +113,7 @@ Response Body Example
 }
 ```
 
-<h4 align="left">As Admin, I can update a notification</h4>
+<h4 align="left">::As Admin, I can update a notification</h4>
 Admins can update one or more fields of existing notifications. The attributes should be passed in the request body.
 
 <br/>[PATCH] 
@@ -138,7 +139,7 @@ Response Body Example
 }
 ```
 
-<h4 align="left">As Admin, I can assign a notification to one or multiple clients</h4>
+<h4 align="left">::As Admin, I can assign a notification to one or multiple clients</h4>
 After a notification is created, Admins can assign them to one multiple Clients passing an array of users ids to the request body. The request creates instance(s) of UserNotification.
 
 <br/>[POST] 
@@ -173,14 +174,14 @@ Response Body Example
 }
 ```
 
-<h4 align="left">As Admin, I can delete a notification</h4>
+<h4 align="left">::As Admin, I can delete a notification</h4>
 Admins are able to delete notifications. Deleting a notification will automatically delete all the user_notifications associated to it. The request will return 204 No Content status if it’s successful.
 
 <br/>[DELETE] 
 <br/>Endpoint: /v1/notifications/:id
 <br/>Host: http://localhost:3000/api
 
-<h4 align="left">As a Client, I can view my notifications</h4>
+<h4 align="left">::As a Client, I can view my notifications</h4>
 A Client is able to see a notification assigned to him using his token to authenticate himself. Admins also have permission to see a notification assigned to a user to know if it has been seen or not.
 
 The first time a Client views a notification, the seen field will be automatically updated to “true”. This does not happen if the admin views this notification.
@@ -208,7 +209,7 @@ Response Body Example
 }
 ``
 
-<h4 align="left">As Admin, I can delete a user_notification</h4>
+<h4 align="left">::As Admin, I can delete a user_notification</h4>
 Admins can also delete user_notifications. The request will return 204 No Content status if it’s successful.
 
 <br/>[DELETE] 
