@@ -20,9 +20,20 @@ The API structured with three models: User, Notification and UserNotification. U
 <h3 align="left">Authentication</h3>
 The Notification Center API uses token authentication to manage requests permissions. All requests require user authentication. The User Token will be automatically generated when a new user is created. The user credentials should be passed in the HTTP headers as the example:
 
-<br/>Request Header
+<br/>Request Headers
 <br/>Content-Type: application/json
 <br/>X-User-Email: john.doe@gmail.com
 <br/>X-User-Token: 1HJ**************BZos
 
 <h3 align="left">Features</h3>
+
+<h4 align="left">As Admin, I can see all notifications</h4>
+Admins have access to a list of all notifications. The response returns an array of notifications.
+
+<br/>[GET] 
+<br/>Endpoint: /v1/notifications
+<br/>Host: http://localhost:3000/api
+
+Response Body Example
+```
+```
