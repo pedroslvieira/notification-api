@@ -16,8 +16,7 @@ class Api::V1::UserNotificationsController < Api::V1::BaseController
       authorize @user_notification
       render_error unless @user_notification.save
     end
-    # render "api/v1/notifications/show", status: :created
-    render :show
+    render "api/v1/notifications/show", status: :created
   end
 
   def destroy
