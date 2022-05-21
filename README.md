@@ -79,8 +79,7 @@ Response Body Example
       "seen": true,
       "user_id": 2,
       "email": "pedro@gmail.com"
-    },
-    …
+    }
   ]
 }
 ```
