@@ -35,5 +35,51 @@ Admins have access to a list of all notifications. The response returns an array
 <br/>Host: http://localhost:3000/api
 
 Response Body Example
+```json
+[
+    {
+        "id": 1,
+        "date": null,
+        "title": "Testing Update",
+        "description": "Testing"
+    },
+    {
+        "id": 2,
+        "date": null,
+        "title": "New Title Update All",
+        "description": "Testing creation"
+    },
+    …
+]
 ```
-```
+
+<h4 align="left">As Admin, I can see the details of a notification </h4>
+Admins can see in detail a notification. It presents a list of all user_notifications associated to it and details about the users notified (user id and email).
+
+<br/>[GET] 
+<br/>Endpoint:  /v1/notifications/:id
+<br/>Host: http://localhost:3000/api
+
+Response Body Example
+```json
+{
+  "id": 1,
+  "date": null,
+  "title": "Testing Update",
+  "description": "Testing",
+  "user_notifications": [
+    {
+      "id": 1,
+      "seen": false,
+      "user_id": 1,
+      "email": "pedroslvieira@gmail.com"
+    },
+    {
+      "id": 3,
+      "seen": true,
+      "user_id": 2,
+      "email": "pedro@gmail.com"
+    },
+    (…)
+  ]
+}
