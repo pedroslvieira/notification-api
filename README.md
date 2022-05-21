@@ -138,7 +138,7 @@ Response Body Example
 }
 ```
 
-<h4 align="left">::As Admin, I can assign a notification to one or multiple clients</h4>
+<h4 align="left">:: As Admin, I can assign a notification to one or multiple clients</h4>
 After a notification is created, Admins can assign them to one multiple Clients passing an array of users ids to the request body. The request creates instance(s) of UserNotification.
 
 <br/>[POST] 
@@ -158,18 +158,17 @@ Request Body Example
 Response Body Example
 ```json
 {
-    "id": 2,
-    "date": "2022-05-21T00:00:00.000Z",
-    "title": "New Title",
-    "description": "Using the API to create a new notification",
-    "user_notifications": [
-        {
-            "id": 1,
-            "seen": false,
-            "user_id": 2,
-            "email": "pedro@gmail.com"
-        }
-    ]
+    "id": 32,
+    "seen": false,
+    "notification": {
+        "id": 1,
+        "title": "New Title",
+        "description": "Testing"
+    },
+    "user": {
+        "id": 2,
+        "email": "pedro@gmail.com"
+    }
 }
 ```
 
@@ -199,7 +198,7 @@ Response Body Example
     "notification": {
         "id": 1,
         "title": "Testing Update",
-        "description": "Testing"
+        "description": "Notification 01 description"
     },
     "user": {
         "id": 2,
