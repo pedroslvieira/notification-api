@@ -158,17 +158,18 @@ Request Body Example
 Response Body Example
 ```json
 {
-    "id": 32,
-    "seen": false,
-    "notification": {
-        "id": 1,
-        "title": "New Title",
-        "description": "Testing"
-    },
-    "user": {
-        "id": 2,
-        "email": "pedro@gmail.com"
-    }
+    "id": 1,
+    "date": "2022-05-21T00:00:00.000Z",
+    "title": "New Title",
+    "description": "Notification 01 description",
+    "user_notifications": [
+        {
+            "id": 2,
+            "seen": false,
+            "user_id": 2,
+            "email": "pedro@gmail.com"
+        }
+    ]
 }
 ```
 
