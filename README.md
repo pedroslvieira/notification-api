@@ -193,10 +193,10 @@ Admins can also delete user_notifications. The request will return 204 No Conten
 <br/>Host: http://localhost:3000/api
 
 <br/><h4 id=8 align="left">:: As a Client, I can view all my notifications</h4>
-A Client can see a list of all the notifications assigned to him. Opening this list will not change the fild "seen" status, which will only change if the Client makes a request for one specific user_notification (#show).
+A Client can see a list of all the notifications assigned to him (user_notifications). Opening this list will not change the fild "seen" status, which will only change if the Client makes a request for one specific user_notification (#show). Admins can also see the entire list of the user_notifications.
 
 <br/>[GET] 
-<br/>Endpoint: /v1/notifications/:notification_id/user_notifications
+<br/>Endpoint: /v1/user_notifications
 <br/>Host: http://localhost:3000/api
 
 ```json
