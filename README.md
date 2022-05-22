@@ -205,21 +205,13 @@ A Client can see a list of all the notifications assigned to him (user_notificat
         "id": 4,
         "seen": false,
         "user_id": 2,
-        "notification": {
-            "id": 1,
-            "title": "Testing Update",
-            "description": "Notification 01 description"
-        }
+        "notification_id": 1
     },
      {
         "id": 5,
         "seen": false,
         "user_id": 2,
-        "notification": {
-            "id": 2,
-            "title": "Notification 02",
-            "description": "Notification 02 description"
-        }
+        "notification_id": 2
     }
 ]
 ```
