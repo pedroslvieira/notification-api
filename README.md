@@ -54,7 +54,7 @@ Response Body Example
 ]
 ```
 
-<h4 id=2 align="left">:: As Admin, I can see the details of a notification </h4>
+<br/><h4 id=2 align="left">:: As Admin, I can see the details of a notification </h4>
 Admins can see in detail a notification. It presents a list of all user_notifications associated to it and details about the users notified (user id and email).
 
 <br/>[GET] 
@@ -85,7 +85,7 @@ Response Body Example
 }
 ```
 
-<h4 id=3 align="left">:: As Admin, I can create a notification</h4>
+<br/><h4 id=3 align="left">:: As Admin, I can create a notification</h4>
 Admins are able to create new notifications with date, title and description. The attributes should be passed in the request body.
 
 <br/>[POST] 
@@ -113,7 +113,7 @@ Response Body Example
 }
 ```
 
-<h4 id=4 align="left">:: As Admin, I can update a notification</h4>
+<br/><h4 id=4 align="left">:: As Admin, I can update a notification</h4>
 Admins can update one or more fields of existing notifications. The attributes should be passed in the request body.
 
 <br/>[PATCH] 
@@ -139,7 +139,7 @@ Response Body Example
 }
 ```
 
-<h4 id=5 align="left">:: As Admin, I can assign a notification to one or multiple clients</h4>
+<br/><h4 id=5 align="left">:: As Admin, I can assign a notification to one or multiple clients</h4>
 After a notification is created, Admins can assign them to one multiple Clients passing an array of users ids to the request body. The request creates instance(s) of UserNotification.
 
 <br/>[POST] 
@@ -174,21 +174,21 @@ Response Body Example
 }
 ```
 
-<h4 id=6 align="left">:: As Admin, I can delete a notification</h4>
+<br/><h4 id=6 align="left">:: As Admin, I can delete a notification</h4>
 Admins are able to delete notifications. Deleting a notification will automatically delete all the user_notifications associated to it. The request will return 204 No Content status if it’s successful.
 
 <br/>[DELETE] 
 <br/>Endpoint: /v1/notifications/:id
 <br/>Host: http://localhost:3000/api
 
-<h4 id=7 align="left">:: As Admin, I can delete a user_notification</h4>
+<br/><h4 id=7 align="left">:: As Admin, I can delete a user_notification</h4>
 Admins can also delete user_notifications. The request will return 204 No Content status if it’s successful.
 
 <br/>[DELETE] 
 <br/>Endpoint: /v1/notifications/:notification_id/user_notifications/:id
 <br/>Host: http://localhost:3000/api
 
-<h4 id=8 align="left">:: As a Client, I can view my notifications</h4>
+<br/><h4 id=8 align="left">:: As a Client, I can view my notifications</h4>
 A Client is able to see a notification assigned to him using his token to authenticate himself. Admins also have permission to see a notification assigned to a user to know if it has been seen or not.
 
 The first time a Client views a notification, the seen field will be automatically updated to “true”. This does not happen if the admin views this notification.
