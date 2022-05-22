@@ -16,6 +16,9 @@ As a Client, I can:
 <br/> :: [View all my notifications](#8)
 <br/> :: [View one notification](#9)
 
+<h3 align="left">Inyova Developers Testing</h3>
+Running db:seeds will create admin-users for each Inyova developer with the corresponding authentication token. It will also generate Clients, Notifications and associations between them so that the developers at Inyova can run tests.
+
 <h3 align="left">Structure</h3>
 The API is structured with three models: User, Notification and UserNotification. Users can have many notifications and notifications can have many users. UserNotification creates the association between a user and a notification, it also contains the field “seen” that indicates if the user has seen the notification.
 
