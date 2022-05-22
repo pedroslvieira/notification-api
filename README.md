@@ -189,6 +189,38 @@ Admins can also delete user_notifications. The request will return 204 No Conten
 <br/>Host: http://localhost:3000/api
 
 <br/><h4 id=8 align="left">:: As a Client, I can view my notifications</h4>
+A Client can see a list of all the notifications assigned to him. Opening this list will not change the fild "seen" status, which will only change if the Client makes a request for one specific user_notification (#show).
+
+<br/>[GET] 
+<br/>Endpoint: /v1/notifications/:notification_id/user_notifications
+<br/>Host: http://localhost:3000/api
+
+```json
+[
+    {
+        "id": 4,
+        "seen": false,
+        "user_id": 2,
+        "notification": {
+            "id": 1,
+            "title": "Testing Update",
+            "description": "Notification 01 description"
+        }
+    },
+     {
+        "id": 5,
+        "seen": false,
+        "user_id": 2,
+        "notification": {
+            "id": 2,
+            "title": "Notification 02",
+            "description": "Notification 02 description"
+        }
+    }
+]
+```
+
+<br/><h4 id=8 align="left">:: As a Client, I can view my notifications</h4>
 A Client is able to see a notification assigned to him using his token to authenticate himself. Admins also have permission to see a notification assigned to a user to know if it has been seen or not.
 
 The first time a Client views a notification, the seen field will be automatically updated to “true”. This does not happen if the admin views this notification.
@@ -204,14 +236,11 @@ Response Body Example
 {
     "id": 4,
     "seen": true,
+    "user_id": 2,
     "notification": {
         "id": 1,
         "title": "Testing Update",
         "description": "Notification 01 description"
-    },
-    "user": {
-        "id": 2,
-        "email": "pedro@gmail.com"
     }
 }
 ```
