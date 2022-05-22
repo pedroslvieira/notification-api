@@ -3,6 +3,9 @@ class Api::V1::UserNotificationsController < Api::V1::BaseController
   before_action :set_user_notification, only: [ :show, :destroy ]
   before_action :set_notification, only: [ :create ]
 
+  def index
+    @user_notifications = policy_scope(UserNotification)
+  end
 
   def show
     @user_notification.update(seen: true) unless current_user.admin
