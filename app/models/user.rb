@@ -5,5 +5,5 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   acts_as_token_authenticatable
   has_many :user_notifications
-  has_many :notifications, through: :user_notifications
+  has_many :notifications, through: :user_notifications, dependent: :destroy
 end
