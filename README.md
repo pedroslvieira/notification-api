@@ -13,7 +13,8 @@ The Notification Center API allows Admins to set up notifications and clients to
 <br/> :: [Delete a user_notification](#7)
 
 As a Client, I can:
-<br/> :: [View my notifications](#8)
+<br/> :: [View all my notifications](#8)
+<br/> :: [View one notification](#9)
 
 <h3 align="left">Structure</h3>
 The API is structured with three models: User, Notification and UserNotification. Users can have many notifications and notifications can have many users. UserNotification creates the association between a user and a notification, it also contains the field “seen” that indicates if the user has seen the notification.
@@ -188,7 +189,7 @@ Admins can also delete user_notifications. The request will return 204 No Conten
 <br/>Endpoint: /v1/notifications/:notification_id/user_notifications/:id
 <br/>Host: http://localhost:3000/api
 
-<br/><h4 id=8 align="left">:: As a Client, I can view my notifications</h4>
+<br/><h4 id=8 align="left">:: As a Client, I can view all my notifications</h4>
 A Client can see a list of all the notifications assigned to him. Opening this list will not change the fild "seen" status, which will only change if the Client makes a request for one specific user_notification (#show).
 
 <br/>[GET] 
@@ -220,7 +221,7 @@ A Client can see a list of all the notifications assigned to him. Opening this l
 ]
 ```
 
-<br/><h4 id=8 align="left">:: As a Client, I can view my notifications</h4>
+<br/><h4 id=9 align="left">:: As a Client, I can view one notification</h4>
 A Client is able to see a notification assigned to him using his token to authenticate himself. Admins also have permission to see a notification assigned to a user to know if it has been seen or not.
 
 The first time a Client views a notification, the seen field will be automatically updated to “true”. This does not happen if the admin views this notification.
