@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :notifications, only: [ :index, :show, :update, :create, :destroy ] do
-        resources :user_notifications, only: [ :index, :show, :create, :destroy ]
+        resources :user_notifications, only: [ :show, :create, :destroy ]
       end
+      resources :user_notifications, only: [ :index ]
     end
   end
   root to: 'pages#home'
